@@ -3,6 +3,7 @@
   --top-dark: #2f2f31;
   --top-text: #1d1d1f;
   --top-muted: #666;
+  --top-black: #000;
   --top-border: rgba(0, 0, 0, 0.08);
   --top-shadow: 0 12px 34px rgba(16, 24, 40, 0.12);
 }
@@ -218,9 +219,9 @@ body.menu-open { overflow: hidden; }
 
 .featured-section .section-intro p {
   margin-bottom: 1.1rem;
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.35;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .featured-view-all {
@@ -306,7 +307,7 @@ body.menu-open { overflow: hidden; }
 }
 
 .featured-office-card .office-card-body {
-  padding: 0.85rem 1rem 0.9rem;
+  padding: 0.85rem 1rem 0rem 0rem;
 }
 
 .featured-office-card h3 {
@@ -317,22 +318,25 @@ body.menu-open { overflow: hidden; }
 }
 
 .featured-office-card p {
-  font-size: 0.76rem;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 500;
   line-height: 1.2;
 }
 
 .featured-office-card .price-tag {
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 
 .featured-office-card .price-tag span {
   font-size: 0.68rem;
   font-weight: 500;
+  color: var(--top-red);
 }
 
 .featured-office-card .btn {
-  padding: 0.32rem 0.9rem;
+  padding: 0.50rem 0.9rem;
   font-size: 0.82rem;
   line-height: 1.2;
   font-weight: 500;
@@ -362,12 +366,12 @@ body.menu-open { overflow: hidden; }
 .office-card h3,
 .blog-card h3 {
   margin: 0 0 0.6rem;
-  font-size: 1.9rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 600;
   letter-spacing: -0.03em;
 }
 
-.office-card p { color: var(--top-muted); }
+.office-card p { color: var(--top-black); }
 .price-tag { font-size: 2rem; font-weight: 800; color: var(--top-red); }
 .price-tag span { font-size: 0.95rem; font-weight: 600; color: var(--top-muted); }
 
@@ -757,6 +761,11 @@ body.menu-open { overflow: hidden; }
   .whatsapp-float {
     display: none;
   }
+
+  .patterned-section {
+  background:url(assets/pattern-bg.png);
+  background-size: cover;
+}
 
   .hero-section {
     min-height: 90vh;
