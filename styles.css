@@ -307,7 +307,7 @@ body.menu-open { overflow: hidden; }
 }
 
 .featured-office-card .office-card-body {
-  padding: 0.85rem 1rem 0rem 0rem;
+  padding: 0.85rem 0 0 0;
 }
 
 .featured-office-card h3 {
@@ -350,6 +350,10 @@ body.menu-open { overflow: hidden; }
   border-radius: 12px;
   background: #fff;
   box-shadow: var(--top-shadow);
+}
+
+.office-card.featured-office-card {
+  box-shadow: none;
 }
 
 .office-card img,
