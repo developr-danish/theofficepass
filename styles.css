@@ -13,6 +13,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; font-family: "Manrope", sans-serif; color: var(--top-text); background: #fff; }
 img { max-width: 100%; display: block; }
 body.menu-open { overflow: hidden; }
+body.lightbox-open { overflow: hidden; }
 
 .mobile-menu-overlay,
 .mobile-bottom-nav {
@@ -447,17 +448,19 @@ body.menu-open { overflow: hidden; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 10px;
-  grid-auto-flow: dense;
   gap: 0.45rem;
 }
 
 .gallery-tile {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 0;
   border-radius: 14px;
   background: #e9e9e9;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
+  cursor: pointer;
 }
 
 .gallery-tile img {
@@ -467,12 +470,55 @@ body.menu-open { overflow: hidden; }
   object-position: center;
 }
 
-.gallery-tile:nth-child(6n + 1) { grid-row: span 32; }
-.gallery-tile:nth-child(6n + 2) { grid-row: span 28; }
-.gallery-tile:nth-child(6n + 3) { grid-row: span 22; }
-.gallery-tile:nth-child(6n + 4) { grid-row: span 30; }
-.gallery-tile:nth-child(6n + 5) { grid-row: span 36; }
-.gallery-tile:nth-child(6n) { grid-row: span 24; }
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(10, 10, 12, 0.82);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.gallery-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.gallery-lightbox-dialog {
+  max-width: min(92vw, 1080px);
+  max-height: 88vh;
+}
+
+.gallery-lightbox-image {
+  max-width: 100%;
+  max-height: 88vh;
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
 
 .stats-grid { display: grid; grid-template-columns: repeat(2, minmax(180px, 1fr)); gap: 1.5rem; }
 .stat-box { padding: 2rem; border-radius: 22px; background: rgba(255, 255, 255, 0.96); box-shadow: var(--top-shadow); }
@@ -985,7 +1031,6 @@ body.menu-open { overflow: hidden; }
 
   .brand-main, .brand-accent { font-size: 1.35rem; }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .gallery-tile:nth-child(n) { grid-row: span 24; }
   .stats-grid { grid-template-columns: 1fr; }
   .city-card { min-height: 280px; }
   .life-side-card img, .life-main-card img { width: 220px; height: 220px; }

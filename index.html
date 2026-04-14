@@ -271,33 +271,42 @@
           <p>Take a visual tour of our coworking and managed offices, showcasing interiors, amenities and vibrant work environments.</p>
         </div>
         <div class="gallery-grid">
-          <article class="gallery-tile">
+          <button class="gallery-tile" type="button">
             <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Open coworking workspace" />
-          </article>
-          <article class="gallery-tile">
+          </button>
+          <button class="gallery-tile" type="button">
             <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Modern office aisle" />
-          </article>
-          <article class="gallery-tile">
+          </button>
+          <button class="gallery-tile" type="button">
             <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=900&q=80" alt="Collaborative workspace" />
-          </article>
-          <article class="gallery-tile">
+          </button>
+          <button class="gallery-tile" type="button">
             <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=900&q=80" alt="Private meeting cabin" />
-          </article>
-          <article class="gallery-tile">
+          </button>
+          <button class="gallery-tile" type="button">
             <img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?auto=format&fit=crop&w=900&q=80" alt="Team breakout area" />
-          </article>
-          <article class="gallery-tile">
+          </button>
+          <button class="gallery-tile" type="button">
             <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=900&q=80" alt="Reception workspace" />
-          </article>
-          <article class="gallery-tile">
+          </button>
+          <button class="gallery-tile" type="button">
             <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Shared office desks" />
-          </article>
-          <article class="gallery-tile">
+          </button>
+          <button class="gallery-tile" type="button">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Workspace interior details" />
-          </article>
+          </button>
         </div>
       </div>
     </section>
+
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+      <button class="gallery-lightbox-close" type="button" aria-label="Close gallery">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <div class="gallery-lightbox-dialog">
+        <img src="" alt="" class="gallery-lightbox-image" />
+      </div>
+    </div>
 
     <section class="section-space patterned-section key-numbers">
       <div class="container">
@@ -600,6 +609,53 @@
         window.addEventListener("resize", update);
         update();
       });
+
+      (function () {
+        var lightbox = document.getElementById("galleryLightbox");
+        var lightboxImage = lightbox ? lightbox.querySelector(".gallery-lightbox-image") : null;
+        var closeButton = lightbox ? lightbox.querySelector(".gallery-lightbox-close") : null;
+        var tiles = Array.from(document.querySelectorAll(".gallery-grid .gallery-tile"));
+
+        if (!lightbox || !lightboxImage || !closeButton || !tiles.length) {
+          return;
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("is-open");
+          lightbox.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("lightbox-open");
+        }
+
+        tiles.forEach(function (tile) {
+          tile.addEventListener("click", function () {
+            var image = tile.querySelector("img");
+
+            if (!image) {
+              return;
+            }
+
+            lightboxImage.src = image.currentSrc || image.src;
+            lightboxImage.alt = image.alt || "";
+            lightbox.classList.add("is-open");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lightbox-open");
+          });
+        });
+
+        closeButton.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", function (event) {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeLightbox();
+          }
+        });
+      })();
 
       document.querySelectorAll(".counter-value").forEach(function (counter) {
         var target = Number(counter.dataset.target || 0);
