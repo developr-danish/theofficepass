@@ -401,7 +401,7 @@ body.menu-open { overflow: hidden; }
 }
 
 .gallery-head {
-  max-width: 760px;
+  max-width: 900px;
   margin-bottom: 2.4rem;
 }
 
@@ -411,7 +411,6 @@ body.menu-open { overflow: hidden; }
 }
 
 .gallery-section .section-head p {
-  max-width: 620px;
   margin: 0.85rem auto 0;
   font-size: 1rem;
   line-height: 1.2;
@@ -816,13 +815,13 @@ body.menu-open { overflow: hidden; }
     align-items: center;
     justify-content: center;
     gap: 0.28rem;
-    font: 16px/1 "Manrope", sans-serif;
+    font: 16px;
     padding: 0.1rem 0.15rem;
     overflow: hidden;
   }
 
   .mobile-bottom-item i {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1;
   }
 
