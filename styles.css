@@ -862,7 +862,6 @@ body.lightbox-open { overflow: hidden; }
 }
 
 .city-hero-subtitle {
-  max-width: 760px;
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.92);
   font-size: clamp(1.15rem, 1.8vw, 1.6rem);

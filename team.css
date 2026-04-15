@@ -1,0 +1,754 @@
+/* Team CSS Start From Here */
+.team-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 0 0;
+  background:
+    linear-gradient(90deg, rgba(36, 44, 58, 0.9) 0%, rgba(36, 44, 58, 0.84) 38%, rgba(36, 44, 58, 0.18) 72%, rgba(36, 44, 58, 0.02) 100%),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+}
+
+.team-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 16, 27, 0.08), rgba(10, 16, 27, 0.2));
+  pointer-events: none;
+}
+
+.team-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  padding: 1.2rem 0 4rem;
+  color: #fff;
+}
+
+.team-hero-title {
+  margin: 0 0 1.25rem;
+  color: #fff;
+  font-size: clamp(2.35rem, 2.2vw, 2rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+}
+
+.team-hero-subtitle {
+  max-width: 420px;
+  margin: 0 0 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.06rem;
+  line-height: 1.65;
+}
+
+.team-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.team-hero-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.team-hero-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.team-hero-stat strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #fff;
+  font-size: 1.95rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.team-hero-stat span {
+  display: block;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.team-hero-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.team-hero-visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.team-hero-visual img {
+  width: min(100%, 520px);
+  max-height: 510px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.team-philosophy-section {
+  padding: 5rem 0;
+  background: radial-gradient(circle at left top, rgba(223, 228, 255, 0.5), rgba(255, 255, 255, 0.98) 44%);
+}
+
+.team-philosophy-copy h2 {
+  margin: 0 0 1.3rem;
+  color: #1d2330;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+}
+
+.team-philosophy-copy p {
+  margin-bottom: 1.45rem;
+  color: #3c4253;
+  font-size: 1.04rem;
+  line-height: 1.85;
+}
+
+.team-philosophy-card {
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+  border-radius: 24px;
+  box-shadow: 0 18px 42px rgba(23, 31, 56, 0.14);
+}
+
+.team-philosophy-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-philosophy-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 16, 28, 0.02) 28%, rgba(11, 16, 28, 0.74) 100%);
+}
+
+.team-philosophy-card-body {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 2rem 1.7rem 1.5rem;
+  color: #fff;
+}
+
+.team-philosophy-card-body h3 {
+  margin: 0 0 0.8rem;
+  color: #fff;
+  font-size: clamp(2rem, 2vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.team-philosophy-card-body h4 {
+  margin: 0 0 0.65rem;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.team-philosophy-card-body p {
+  max-width: 520px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.team-philosophy-linkedin {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #0a66c2;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.35rem;
+}
+
+.team-core-section {
+  padding: 5rem 0 4.8rem;
+  background: radial-gradient(circle at left top, rgba(223, 228, 255, 0.42), rgba(255, 255, 255, 0.98) 42%);
+}
+
+.team-core-block + .team-core-block {
+  margin-top: 2.6rem;
+}
+
+.team-core-heading {
+  margin: 0 0 1.4rem;
+  color: #1d2330;
+  font-size: clamp(1.8rem, 2.4vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.team-member-card,
+.team-moment-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(18, 25, 38, 0.1);
+}
+
+.team-member-media,
+.team-moment-media {
+  position: relative;
+}
+
+.team-member-media img,
+.team-moment-media img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.team-member-linkedin {
+  position: absolute;
+  left: 0.7rem;
+  bottom: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0a66c2;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 10px 18px rgba(10, 102, 194, 0.28);
+}
+
+.team-member-body,
+.team-moment-body {
+  padding: 1rem 1rem 1.15rem;
+}
+
+.team-member-body h3,
+.team-moment-body h3 {
+  margin: 0 0 0.35rem;
+  color: #1f2430;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.team-member-body h4 {
+  margin: 0 0 0.45rem;
+  color: #2b3040;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.team-member-body p,
+.team-moment-body p {
+  margin: 0;
+  color: #5d6473;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.team-moment-media img {
+  height: 185px;
+}
+
+.team-cta-section {
+  background: #000;
+}
+
+.team-cta-box {
+  border-radius: 0;
+  text-align: center;
+}
+
+.team-cta-box h2 {
+  margin: 0 0 0.9rem;
+  color: #fff;
+  font-size: clamp(2rem, 2.6vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.team-cta-box p {
+  max-width: 620px;
+  margin: 0 auto 1.5rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.team-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.team-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+  padding: 0.72rem 1.35rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.team-cta-btn-primary {
+  background: var(--top-red);
+  color: #fff;
+}
+
+.team-life-head {
+  max-width: 1000px;
+  margin: 0 auto 1.8rem;
+}
+
+.team-life-head h2 {
+  margin: 0 0 0.8rem;
+  color: #20232d;
+  font-size: clamp(2rem, 2.6vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.team-life-head p {
+  margin: 0 auto;
+  color: #444b5a;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.team-life-section .life-carousel-wrap {
+  padding: 0 4.8rem;
+}
+
+.team-life-section .life-carousel-track {
+  align-items: flex-start;
+}
+
+.team-life-section .life-card {
+  text-align: center;
+  color: #1f2430;
+}
+
+.team-life-section .life-card img,
+.team-life-section .life-card-side img,
+.team-life-section .life-card-main img {
+  width: 100%;
+  max-width: 285px;
+  height: 360px;
+  margin: 0 auto 0.9rem;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: none;
+}
+
+.team-life-section .life-card-side,
+.team-life-section .life-card-main {
+  opacity: 1;
+}
+
+.team-life-section .life-card h3,
+.team-life-section .life-card-side h3,
+.team-life-section .life-card-main h3 {
+  max-width: none;
+  margin: 0;
+  color: #1f2430;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.team-life-section .life-card p,
+.team-life-section .life-card-main p {
+  display: none;
+}
+
+.team-life-section .life-arrow {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(31, 36, 48, 0.25);
+  background: #fff;
+  color: #1f2430;
+  box-shadow: none;
+}
+
+.team-apply-section {
+  background:
+    radial-gradient(circle at top left, rgba(234, 225, 255, 0.5), rgba(255, 255, 255, 0.92) 42%),
+    linear-gradient(180deg, #fff 0%, #fff7f7 100%);
+}
+
+.team-apply-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 3rem;
+  border: 1px solid rgba(226, 58, 58, 0.08);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 50px rgba(37, 31, 54, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.team-apply-head {
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+
+.team-apply-kicker {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(230, 58, 58, 0.1);
+  color: var(--top-red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.team-apply-head h2 {
+  margin: 0 0 0.6rem;
+  color: var(--top-red);
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.team-apply-head p {
+  margin: 0;
+  color: #4c5260;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.team-apply-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: #222937;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.team-apply-control,
+.team-apply-code {
+  width: 100%;
+  min-height: 56px;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(31, 36, 48, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #212733;
+  font-size: 0.96rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-apply-control:focus,
+.team-apply-code:focus {
+  border-color: rgba(230, 58, 58, 0.45);
+  box-shadow: 0 0 0 4px rgba(230, 58, 58, 0.08);
+}
+
+.team-apply-phone {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.team-upload-input {
+  display: none;
+}
+
+.team-upload-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(31, 36, 48, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-upload-card:hover {
+  border-color: rgba(230, 58, 58, 0.32);
+}
+
+.team-upload-text {
+  color: #7a8090;
+  font-size: 0.95rem;
+}
+
+.team-upload-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--top-red);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.team-apply-actions {
+  margin-top: 1.7rem;
+}
+
+.team-apply-submit {
+  min-width: 220px;
+  padding: 0.9rem 1.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ef4b4b, #d92d2d);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+@media (max-width: 991.98px) {
+  .team-hero {
+    padding: 3.5rem 0 0;
+    background-position: center;
+  }
+
+  .team-hero-copy {
+    max-width: none;
+    padding: 0.5rem 0 0;
+  }
+
+  .team-hero-subtitle {
+    max-width: none;
+  }
+
+  .team-hero-visual {
+    justify-content: center;
+  }
+
+  .team-hero-visual img {
+    width: 100%;
+    max-height: 420px;
+  }
+
+  .team-philosophy-section {
+    padding: 3.8rem 0;
+  }
+
+  .team-philosophy-copy {
+    max-width: none;
+  }
+
+  .team-philosophy-card {
+    min-height: 460px;
+  }
+
+  .team-core-section {
+    padding: 0.5rem 0 4rem;
+  }
+
+  .team-core-block + .team-core-block {
+    margin-top: 2.2rem;
+  }
+
+  .team-life-section .life-carousel-wrap {
+    padding: 0;
+  }
+
+  .team-apply-shell {
+    padding: 2.2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .team-hero {
+    padding: 2.4rem 0 0;
+    background:
+      linear-gradient(180deg, rgba(36, 44, 58, 0.88) 0%, rgba(36, 44, 58, 0.74) 42%, rgba(36, 44, 58, 0.35) 100%),
+      url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+  }
+
+  .team-hero-copy {
+    text-align: left;
+    padding-bottom: 0;
+  }
+
+  .team-hero-title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .team-hero-subtitle {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .team-hero-stats {
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .team-hero-stat {
+    width: 100%;
+  }
+
+  .team-hero-stat-divider {
+    display: none;
+  }
+
+  .team-hero-stat strong {
+    font-size: 1.65rem;
+  }
+
+  .team-hero-visual img {
+    max-height: 320px;
+    object-position: center top;
+  }
+
+  .team-philosophy-section {
+    padding: 3.2rem 0;
+  }
+
+  .team-philosophy-copy h2,
+  .team-philosophy-copy p {
+    text-align: center;
+  }
+
+  .team-philosophy-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .team-philosophy-card {
+    min-height: 380px;
+    border-radius: 20px;
+  }
+
+  .team-philosophy-card-body {
+    padding: 1.45rem 1.1rem 1.1rem;
+  }
+
+  .team-philosophy-card-body h3 {
+    font-size: 1.8rem;
+  }
+
+  .team-philosophy-card-body h4 {
+    font-size: 1rem;
+  }
+
+  .team-philosophy-card-body p {
+    font-size: 0.92rem;
+    padding-right: 2.8rem;
+  }
+
+  .team-philosophy-linkedin {
+    right: 1rem;
+    bottom: 1rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+
+  .team-core-heading {
+    text-align: center;
+  }
+
+  .team-member-media img,
+  .team-moment-media img {
+    height: 220px;
+  }
+
+  .team-member-body,
+  .team-moment-body {
+    padding: 0.95rem;
+  }
+
+
+  .team-cta-box {
+    padding: 0 1rem;
+  }
+
+  .team-cta-box p {
+    font-size: 0.95rem;
+  }
+
+  .team-cta-actions {
+    gap: 0.6rem;
+  }
+
+  .team-cta-btn {
+    min-width: 124px;
+    padding: 0.7rem 1rem;
+  }
+
+  .team-life-head {
+    margin-bottom: 1.4rem;
+  }
+
+  .team-life-head p {
+    font-size: 0.95rem;
+  }
+
+  .team-life-section .life-card img,
+  .team-life-section .life-card-side img,
+  .team-life-section .life-card-main img {
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .team-apply-shell {
+    padding: 1.35rem;
+    border-radius: 22px;
+  }
+
+  .team-apply-head {
+    margin-bottom: 1.4rem;
+  }
+
+  .team-apply-phone {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 0.6rem;
+  }
+
+  .team-apply-submit {
+    width: 100%;
+    min-width: 0;
+  }
+}
+/* Team CSS End Here */
