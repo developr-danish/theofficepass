@@ -441,13 +441,6 @@
   text-transform: uppercase;
 }
 
-.team-apply-head h2 {
-  margin: 0 0 0.6rem;
-  color: var(--top-red);
-  font-size: clamp(2rem, 2.8vw, 2.8rem);
-  font-weight: 800;
-  line-height: 1.15;
-}
 
 .team-apply-head p {
   margin: 0;
