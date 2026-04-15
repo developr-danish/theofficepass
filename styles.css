@@ -1471,12 +1471,11 @@ body.lightbox-open { overflow: hidden; }
   }
 
   .city-why-image {
-    min-height: 150px;
+    height: 150px;
   }
 
-  .city-why-gallery .city-why-image:nth-child(2),
-  .city-why-gallery .city-why-image:nth-child(4) {
-    margin-top: 0;
+  .city-why-gallery .city-why-image:nth-child(2) {
+    margin-top: 22px;
   }
 
   .city-enquiry-visual img {
