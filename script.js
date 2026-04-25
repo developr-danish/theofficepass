@@ -598,3 +598,39 @@
 
         updateDirectory();
       })();
+
+
+      // scm form js
+
+      const scmForm = document.querySelector("[data-scm-form]");
+      if (scmForm) {
+        const stepOne = scmForm.querySelector(".scm-form-step-one");
+        const stepTwo = scmForm.querySelector(".scm-form-step-two");
+        const nextButton = scmForm.querySelector("[data-scm-next]");
+        const skipButton = scmForm.querySelector("[data-scm-skip]");
+        const choiceButtons = scmForm.querySelectorAll(".scm-choice-chip");
+
+        const showStep = (step) => {
+          const showFirst = step === 1;
+          stepOne.classList.toggle("is-active", showFirst);
+          stepTwo.classList.toggle("is-active", !showFirst);
+        };
+
+        nextButton?.addEventListener("click", () => showStep(2));
+        skipButton?.addEventListener("click", () => showStep(1));
+
+        choiceButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const group = button.closest(".scm-choice-group");
+            group?.querySelectorAll(".scm-choice-chip").forEach((chip) => chip.classList.remove("is-selected"));
+            button.classList.add("is-selected");
+          });
+        });
+
+        stepTwo?.querySelector(".scm-details-form")?.addEventListener("submit", (event) => {
+          event.preventDefault();
+          showStep(1);
+        });
+      }
+
+      // scm form js

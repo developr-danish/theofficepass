@@ -409,32 +409,65 @@
       </div>
     </section>
     
-
-    <section class="section-space gallery-section" id="gallery">
+    <section class="section-space gallery-section gallery-section-masonry" id="gallery">
       <div class="container">
         <div class="text-center section-head gallery-head">
           <h2 class="section-title text-danger">Photo Gallery</h2>
           <p>Take a visual tour of our coworking and managed offices, showcasing interiors, amenities and vibrant work environments.</p>
         </div>
         <div class="gallery-grid">
-          <button class="gallery-tile" type="button"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Open coworking workspace" /></button>
-          <button class="gallery-tile" type="button"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Modern office aisle" /></button>
-          <button class="gallery-tile" type="button"><img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=900&q=80" alt="Collaborative workspace" /></button>
-          <button class="gallery-tile" type="button"><img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=900&q=80" alt="Private meeting cabin" /></button>
-          <button class="gallery-tile" type="button"><img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?auto=format&fit=crop&w=900&q=80" alt="Team breakout area" /></button>
-          <button class="gallery-tile" type="button"><img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=900&q=80" alt="Reception workspace" /></button>
-          <button class="gallery-tile" type="button"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Shared office desks" /></button>
-          <button class="gallery-tile" type="button"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Workspace interior details" /></button>
+          <button class="gallery-tile" type="button">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Open coworking workspace" />
+            <span class="gallery-chip"><i class="bi bi-arrows-angle-expand"></i>Workspace Walkthrough</span>
+          </button>
+          <button class="gallery-tile" type="button">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Modern office aisle" />
+            <span class="gallery-chip"><i class="bi bi-arrows-angle-expand"></i>Design Details</span>
+          </button>
+          <button class="gallery-tile" type="button">
+            <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=900&q=80" alt="Collaborative workspace" />
+            <span class="gallery-chip"><i class="bi bi-arrows-angle-expand"></i>Team Spaces</span>
+          </button>
+          <button class="gallery-tile" type="button">
+            <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=900&q=80" alt="Private meeting cabin" />
+            <span class="gallery-chip"><i class="bi bi-arrows-angle-expand"></i>Meeting Suites</span>
+          </button>
+          <button class="gallery-tile" type="button">
+            <img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?auto=format&fit=crop&w=900&q=80" alt="Team breakout area" />
+            <span class="gallery-chip"><i class="bi bi-arrows-angle-expand"></i>Breakout Zones</span>
+          </button>
+          <button class="gallery-tile" type="button">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Shared office desks" />
+            <span class="gallery-chip"><i class="bi bi-arrows-angle-expand"></i>Shared Desks</span>
+          </button>
+          <button class="gallery-tile" type="button">
+            <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=900&q=80" alt="Reception workspace" />
+            <span class="gallery-chip"><i class="bi bi-arrows-angle-expand"></i>Welcome Lounge</span>
+          </button>
+          <button class="gallery-tile" type="button">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Workspace interior details" />
+            <span class="gallery-chip"><i class="bi bi-arrows-angle-expand"></i>Interior Mood</span>
+          </button>
         </div>
       </div>
     </section>
 
-    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox gallery-lightbox-modern" id="galleryLightbox" aria-hidden="true">
       <button class="gallery-lightbox-close" type="button" aria-label="Close gallery">
         <i class="bi bi-x-lg"></i>
       </button>
       <div class="gallery-lightbox-dialog">
-        <img src="" alt="" class="gallery-lightbox-image" />
+        <div class="gallery-lightbox-frame">
+          <div class="gallery-lightbox-image-wrap">
+            <img src="" alt="" class="gallery-lightbox-image" />
+          </div>
+          <div class="gallery-lightbox-meta">
+            <div class="gallery-lightbox-copy">
+              <span class="gallery-lightbox-kicker">Photo Gallery</span>
+              <p class="gallery-lightbox-title" id="galleryLightboxTitle">Workspace preview</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
