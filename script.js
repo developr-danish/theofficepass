@@ -4,6 +4,9 @@
         var menu = document.getElementById("mobileMenu");
         var toggles = Array.from(document.querySelectorAll(".mobile-menu-toggle"));
         var menuLinks = Array.from(document.querySelectorAll(".mobile-menu-card, .mobile-menu-visit, .mobile-menu-phone"));
+        var locationMenu = document.getElementById("mobileLocationMenu");
+        var locationToggles = Array.from(document.querySelectorAll(".mobile-location-toggle"));
+        var locationLinks = Array.from(document.querySelectorAll(".mobile-location-item, #mobileLocationMenu .mobile-menu-visit, #mobileLocationMenu .mobile-menu-phone"));
 
         function setMenuState(isOpen) {
           menu.classList.toggle("is-open", isOpen);
@@ -17,8 +20,24 @@
           });
         }
 
+        function setLocationMenuState(isOpen) {
+          if (!locationMenu) {
+            return;
+          }
+
+          locationMenu.classList.toggle("is-open", isOpen);
+          locationMenu.setAttribute("aria-hidden", String(!isOpen));
+          document.body.classList.toggle("menu-open", isOpen || menu.classList.contains("is-open"));
+
+          locationToggles.forEach(function (toggle) {
+            toggle.classList.toggle("is-active", isOpen);
+            toggle.setAttribute("aria-expanded", String(isOpen));
+          });
+        }
+
         toggles.forEach(function (toggle) {
           toggle.addEventListener("click", function () {
+            setLocationMenuState(false);
             setMenuState(!menu.classList.contains("is-open"));
           });
         });
@@ -26,6 +45,19 @@
         menuLinks.forEach(function (link) {
           link.addEventListener("click", function () {
             setMenuState(false);
+          });
+        });
+
+        locationToggles.forEach(function (toggle) {
+          toggle.addEventListener("click", function () {
+            setMenuState(false);
+            setLocationMenuState(!locationMenu.classList.contains("is-open"));
+          });
+        });
+
+        locationLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            setLocationMenuState(false);
           });
         });
       })();
