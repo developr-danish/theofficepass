@@ -46,6 +46,72 @@
       </div>
     </div>
 
+    <div class="mobile-menu-overlay mobile-location-overlay" id="mobileLocationMenu" aria-hidden="true">
+      <div class="mobile-menu-shell">
+        <a class="mobile-menu-brand" href="#">
+          <img src="assets/logo.svg" alt="The Office Pass logo">
+        </a>
+        <div class="mobile-location-links" aria-label="Mobile locations menu">
+          <section class="mobile-location-group">
+            <div class="mobile-location-city">Gurgaon</div>
+            <div class="mobile-location-items">
+              <a href="#" class="mobile-location-item">Cyber City, DLF 3</a>
+              <a href="#" class="mobile-location-item">Golf Course Road, Paras Downtown Center</a>
+              <a href="#" class="mobile-location-item">Udyog Vihar, Sector 20</a>
+            </div>
+          </section>
+          <section class="mobile-location-group">
+            <div class="mobile-location-city">Delhi</div>
+            <div class="mobile-location-items">
+              <a href="#" class="mobile-location-item">Mathura Road, Mohan Cooperative</a>
+            </div>
+          </section>
+          <section class="mobile-location-group">
+            <div class="mobile-location-city">Noida</div>
+            <div class="mobile-location-items">
+              <a href="#" class="mobile-location-item">Sector 3, Near 16 Metro Station</a>
+            </div>
+          </section>
+        </div>
+        <div class="mobile-menu-cta">
+          <a href="tel:8999828282" class="mobile-menu-phone">
+            <i class="bi bi-telephone"></i>
+            <span>8999 828282</span>
+          </a>
+          <a href="#contact" class="mobile-menu-visit">BOOK A VISIT</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-menu-overlay mobile-booking-overlay" id="mobileBookingMenu" aria-hidden="true">
+      <div class="mobile-menu-shell">
+        <a class="mobile-menu-brand" href="#">
+          <img src="assets/logo.svg" alt="The Office Pass logo">
+        </a>
+        <div class="mobile-booking-shell">
+          <div class="mobile-booking-head">
+            <h2>Book a Visit</h2>
+            <p>Share your details and we will help you schedule a walkthrough.</p>
+          </div>
+          <form class="mobile-booking-form">
+            <div class="mobile-booking-field">
+              <label for="mobileVisitName">Full Name</label>
+              <input id="mobileVisitName" type="text" placeholder="Enter your full name">
+            </div>
+            <div class="mobile-booking-field">
+              <label for="mobileVisitEmail">Email ID</label>
+              <input id="mobileVisitEmail" type="email" placeholder="Enter your email id">
+            </div>
+            <div class="mobile-booking-field">
+              <label for="mobileVisitPhone">Mobile Number</label>
+              <input id="mobileVisitPhone" type="tel" placeholder="Enter your mobile number">
+            </div>
+            <button type="submit" class="mobile-booking-submit">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-expand-xl navbar-light top-navbar sticky-top bg-white">
       <div class="container">
         <a class="navbar-brand brand-mark" href="index.html">
@@ -491,11 +557,26 @@
     </footer>
 
     <nav class="mobile-bottom-nav" aria-label="Bottom navigation">
-      <a href="index.html" class="mobile-bottom-item"><i class="bi bi-house-fill"></i><span>Home</span></a>
-      <a href="#city-locations" class="mobile-bottom-item is-active"><i class="bi bi-geo-alt-fill"></i><span>Location</span></a>
-      <a href="#contact" class="mobile-bottom-item"><i class="bi bi-calendar2-check-fill"></i><span>Book a Visit</span></a>
-      <a href="https://wa.me/918999828282" class="mobile-bottom-item"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
-      <button type="button" class="mobile-bottom-item mobile-menu-toggle" aria-controls="mobileMenu" aria-expanded="false"><i class="bi bi-list"></i><span>Menu</span></button>
+      <a href="#" class="mobile-bottom-item is-active">
+        <i class="bi bi-house-fill"></i>
+        <span>Home</span>
+      </a>
+      <button type="button" class="mobile-bottom-item mobile-location-toggle" aria-controls="mobileLocationMenu" aria-expanded="false">
+        <i class="bi bi-geo-alt-fill"></i>
+        <span>Location</span>
+      </button>
+      <button type="button" class="mobile-bottom-item mobile-booking-toggle" aria-controls="mobileBookingMenu" aria-expanded="false">
+        <i class="bi bi-calendar2-check-fill"></i>
+        <span>Book a Visit</span>
+      </button>
+      <a href="https://wa.me/918999828282" class="mobile-bottom-item">
+        <i class="bi bi-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+      <button type="button" class="mobile-bottom-item mobile-menu-toggle" aria-controls="mobileMenu" aria-expanded="false">
+        <i class="bi bi-list"></i>
+        <span>Menu</span>
+      </button>
     </nav>
 
     <script src="script.js"></script>

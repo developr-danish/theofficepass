@@ -105,6 +105,35 @@
       </div>
     </div>
 
+    <div class="mobile-menu-overlay mobile-booking-overlay" id="mobileBookingMenu" aria-hidden="true">
+      <div class="mobile-menu-shell">
+        <a class="mobile-menu-brand" href="#">
+          <img src="assets/logo.svg" alt="The Office Pass logo">
+        </a>
+        <div class="mobile-booking-shell">
+          <div class="mobile-booking-head">
+            <h2>Book a Visit</h2>
+            <p>Share your details and we will help you schedule a walkthrough.</p>
+          </div>
+          <form class="mobile-booking-form">
+            <div class="mobile-booking-field">
+              <label for="mobileVisitName">Full Name</label>
+              <input id="mobileVisitName" type="text" placeholder="Enter your full name">
+            </div>
+            <div class="mobile-booking-field">
+              <label for="mobileVisitEmail">Email ID</label>
+              <input id="mobileVisitEmail" type="email" placeholder="Enter your email id">
+            </div>
+            <div class="mobile-booking-field">
+              <label for="mobileVisitPhone">Mobile Number</label>
+              <input id="mobileVisitPhone" type="tel" placeholder="Enter your mobile number">
+            </div>
+            <button type="submit" class="mobile-booking-submit">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-expand-xl navbar-light top-navbar sticky-top bg-white">
       <div class="container">
         <a class="navbar-brand brand-mark" href="#">
@@ -500,10 +529,10 @@
         <i class="bi bi-geo-alt-fill"></i>
         <span>Location</span>
       </button>
-      <a href="#contact" class="mobile-bottom-item">
+      <button type="button" class="mobile-bottom-item mobile-booking-toggle" aria-controls="mobileBookingMenu" aria-expanded="false">
         <i class="bi bi-calendar2-check-fill"></i>
         <span>Book a Visit</span>
-      </a>
+      </button>
       <a href="https://wa.me/918999828282" class="mobile-bottom-item">
         <i class="bi bi-whatsapp"></i>
         <span>WhatsApp</span>

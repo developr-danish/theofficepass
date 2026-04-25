@@ -1313,7 +1313,8 @@ body.lightbox-open { overflow: hidden; }
 
   .mobile-bottom-item.is-active,
   .mobile-bottom-item.mobile-menu-toggle.is-active,
-  .mobile-bottom-item.mobile-location-toggle.is-active {
+  .mobile-bottom-item.mobile-location-toggle.is-active,
+  .mobile-bottom-item.mobile-booking-toggle.is-active {
     color: var(--top-red);
   }
 
@@ -1349,6 +1350,10 @@ body.lightbox-open { overflow: hidden; }
 
   .mobile-location-overlay .mobile-menu-shell {
     gap: 1.2rem;
+  }
+
+  .mobile-booking-overlay .mobile-menu-shell {
+    justify-content: flex-start;
   }
 
   .mobile-menu-brand {
@@ -1440,6 +1445,80 @@ body.lightbox-open { overflow: hidden; }
   .mobile-location-item:hover,
   .mobile-location-item:focus {
     color: var(--top-red);
+  }
+
+  .mobile-booking-shell {
+    margin-top: 0.4rem;
+    padding: 1.3rem 1.1rem 1.15rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 16px 32px rgba(16, 24, 40, 0.08);
+  }
+
+  .mobile-booking-head {
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  .mobile-booking-head h2 {
+    margin: 0 0 0.5rem;
+    color: #1e1f24;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .mobile-booking-head p {
+    margin: 0;
+    color: #5c5f69;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .mobile-booking-form {
+    display: grid;
+    gap: 0.95rem;
+  }
+
+  .mobile-booking-field {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .mobile-booking-field label {
+    color: #252831;
+    font-size: 0.87rem;
+    font-weight: 600;
+  }
+
+  .mobile-booking-field input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.95rem;
+    background: #fff;
+    color: #202228;
+    font-size: 0.95rem;
+    outline: none;
+  }
+
+  .mobile-booking-field input:focus {
+    border-color: rgba(230, 58, 58, 0.45);
+    box-shadow: 0 0 0 4px rgba(230, 58, 58, 0.08);
+  }
+
+  .mobile-booking-submit {
+    min-height: 52px;
+    margin-top: 0.2rem;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ff6565, #e92a34);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
   }
 
   .mobile-menu-cta {

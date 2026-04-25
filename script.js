@@ -7,11 +7,14 @@
         var locationMenu = document.getElementById("mobileLocationMenu");
         var locationToggles = Array.from(document.querySelectorAll(".mobile-location-toggle"));
         var locationLinks = Array.from(document.querySelectorAll(".mobile-location-item, #mobileLocationMenu .mobile-menu-visit, #mobileLocationMenu .mobile-menu-phone"));
+        var bookingMenu = document.getElementById("mobileBookingMenu");
+        var bookingToggles = Array.from(document.querySelectorAll(".mobile-booking-toggle"));
+        var bookingForm = bookingMenu ? bookingMenu.querySelector(".mobile-booking-form") : null;
 
         function setMenuState(isOpen) {
           menu.classList.toggle("is-open", isOpen);
           menu.setAttribute("aria-hidden", String(!isOpen));
-          document.body.classList.toggle("menu-open", isOpen);
+          document.body.classList.toggle("menu-open", isOpen || (locationMenu && locationMenu.classList.contains("is-open")) || (bookingMenu && bookingMenu.classList.contains("is-open")));
           toggles.forEach(function (toggle) {
             toggle.classList.toggle("is-active", isOpen);
             toggle.setAttribute("aria-expanded", String(isOpen));
@@ -27,9 +30,24 @@
 
           locationMenu.classList.toggle("is-open", isOpen);
           locationMenu.setAttribute("aria-hidden", String(!isOpen));
-          document.body.classList.toggle("menu-open", isOpen || menu.classList.contains("is-open"));
+          document.body.classList.toggle("menu-open", isOpen || menu.classList.contains("is-open") || (bookingMenu && bookingMenu.classList.contains("is-open")));
 
           locationToggles.forEach(function (toggle) {
+            toggle.classList.toggle("is-active", isOpen);
+            toggle.setAttribute("aria-expanded", String(isOpen));
+          });
+        }
+
+        function setBookingMenuState(isOpen) {
+          if (!bookingMenu) {
+            return;
+          }
+
+          bookingMenu.classList.toggle("is-open", isOpen);
+          bookingMenu.setAttribute("aria-hidden", String(!isOpen));
+          document.body.classList.toggle("menu-open", isOpen || menu.classList.contains("is-open") || (locationMenu && locationMenu.classList.contains("is-open")));
+
+          bookingToggles.forEach(function (toggle) {
             toggle.classList.toggle("is-active", isOpen);
             toggle.setAttribute("aria-expanded", String(isOpen));
           });
@@ -38,6 +56,7 @@
         toggles.forEach(function (toggle) {
           toggle.addEventListener("click", function () {
             setLocationMenuState(false);
+            setBookingMenuState(false);
             setMenuState(!menu.classList.contains("is-open"));
           });
         });
@@ -51,6 +70,7 @@
         locationToggles.forEach(function (toggle) {
           toggle.addEventListener("click", function () {
             setMenuState(false);
+            setBookingMenuState(false);
             setLocationMenuState(!locationMenu.classList.contains("is-open"));
           });
         });
@@ -60,6 +80,21 @@
             setLocationMenuState(false);
           });
         });
+
+        bookingToggles.forEach(function (toggle) {
+          toggle.addEventListener("click", function () {
+            setMenuState(false);
+            setLocationMenuState(false);
+            setBookingMenuState(!bookingMenu.classList.contains("is-open"));
+          });
+        });
+
+        if (bookingForm) {
+          bookingForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            setBookingMenuState(false);
+          });
+        }
       })();
 
       // Featured offices carousel JS: handles drag, slide, arrows, and active card movement.
