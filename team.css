@@ -8,6 +8,29 @@
     url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
 }
 
+.team-hero::before,
+.team-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  z-index: 2;
+  height: 112px;
+  background: #FFFFFF;
+  pointer-events: none;
+}
+
+.team-hero::before {
+  left: -1%;
+  width: 70%;
+  clip-path: polygon(0 10%, 100% 100%, 0 100%);
+}
+
+.team-hero::after {
+  right: -1%;
+  width: 35%;
+  clip-path: polygon(0 100%, 100% 42%, 100% 100%);
+}
+
 .team-hero-overlay {
   position: absolute;
   inset: 0;
