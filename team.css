@@ -42,7 +42,7 @@
   position: relative;
   z-index: 1;
   max-width: 560px;
-  padding: 1.2rem 0 4rem;
+  padding: 1.2rem 0 10rem;
   color: #fff;
 }
 
@@ -126,7 +126,6 @@
 
 .team-philosophy-section {
   padding: 5rem 0;
-  background: radial-gradient(circle at left top, rgba(223, 228, 255, 0.5), rgba(255, 255, 255, 0.98) 44%);
 }
 
 .team-philosophy-copy h2 {
@@ -287,7 +286,8 @@
   line-height: 1.25;
 }
 
-.team-member-body h4 {
+.team-member-body h4 ,
+.team-moment-body h4 {
   margin: 0 0 0.45rem;
   color: #D7282F;
   font-size: 0.98rem;
@@ -557,6 +557,10 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.team-apply-code{
+  max-width: 80px;
+}
+
 .team-apply-control:focus,
 .team-apply-code:focus {
   border-color: rgba(230, 58, 58, 0.45);
@@ -565,7 +569,7 @@
 
 .team-apply-phone {
   display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);
+  grid-template-columns: 80px minmax(0, 1fr);
   gap: 0.75rem;
 }
 
@@ -678,11 +682,16 @@
 
 @media (max-width: 767.98px) {
   .team-hero {
-    padding: 2.4rem 0 0;
+    padding: 2.4rem 0 2.4rem;
     background:
       linear-gradient(180deg, rgba(36, 44, 58, 0.88) 0%, rgba(36, 44, 58, 0.74) 42%, rgba(36, 44, 58, 0.35) 100%),
       url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
   }
+
+  .team-hero::before,
+.team-hero::after {
+  display: none;
+}
 
   .team-hero-copy {
     text-align: left;

@@ -3,7 +3,8 @@
 .career-hero {
   position: relative;
   overflow: hidden;
-  background:url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+  background:url("assets/image.png") center/cover no-repeat;
+  background-position: top;
 }
 
 .career-hero::before,
@@ -198,14 +199,13 @@
 .career-benefit-copy h3 {
   margin: 0 0 0.45rem;
   color: #1f2430;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  font-weight: 600;
   line-height: 1.45;
 }
 
 .career-benefit-copy p {
   margin: 0;
-  color: #666874;
   font-size: 0.92rem;
   line-height: 1.7;
 }
@@ -217,14 +217,13 @@
 }
 
 .career-testimonial-card {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
+  display: flex;
   overflow: hidden;
 }
 
 .career-testimonial-media {
   position: relative;
-  min-height: 100%;
+  width: 40%;
 }
 
 .career-testimonial-media img {
@@ -253,6 +252,7 @@
 
 .career-testimonial-copy {
   padding: 1.35rem 1.35rem 1.2rem;
+  width: 60%;
 }
 
 .career-testimonial-copy h3 {
@@ -269,20 +269,15 @@
 
 .career-testimonial-copy span {
   margin-top: 0.22rem;
-  color: #505664;
+  color: #D7282F;
   font-size: 0.92rem;
   font-weight: 600;
+  display: flex;
 }
-
-.career-testimonial-copy small {
-  width: fit-content;
-  margin-top: 0.6rem;
-  padding: 0.28rem 0.65rem;
-  border-radius: 999px;
-  background: #f4f5f8;
-  color: #7a7d88;
-  font-size: 0.73rem;
-  font-weight: 700;
+.career-testimonial-copy span span{
+  margin-left: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
 }
 
 .career-testimonial-copy p {
@@ -290,6 +285,26 @@
   color: #666874;
   font-size: 0.9rem;
   line-height: 1.7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.career-testimonial-copy p.is-expanded {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.career-testimonial-toggle {
+  margin-top: 0.7rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--top-red);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .career-openings-grid {
@@ -405,7 +420,7 @@
   }
 
   .career-testimonial-card {
-    grid-template-columns: 220px minmax(0, 1fr);
+    flex-direction: column;
   }
 }
 
@@ -466,16 +481,22 @@
   }
 
   .career-testimonial-card {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    width: 100%;
   }
 
   .career-testimonial-media {
     min-height: 220px;
+    width: 100%;
+  }
+  .career-testimonial-media img {
+    border-radius: none;
   }
 
   .career-testimonial-copy,
   .career-opening-card {
     padding: 1.15rem;
+    width: 100%;
   }
 
   .career-opening-footer {

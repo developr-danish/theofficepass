@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Office Pass - Team Page</title>
+    <title>The Office Pass - Plans & Pricing</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,7 +19,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./team.css" />
   </head>
   <body>
     <div class="d-block d-md-none pb-1">
@@ -190,59 +189,95 @@
       </div>
     </nav>
 
-    <header class="team-hero">
-      <div class="team-hero-overlay"></div>
+    <header class="city-hero">
+      <div class="city-hero-overlay"></div>
       <div class="container position-relative">
-        <div class="row align-items-end align-items-lg-center g-4">
-          <div class="col-lg-6">
-            <div class="team-hero-copy">
-              <h2 class="team-hero-title">Meet The Team <br> Behind The Office Pass (TOP)</h2>
-              <p class="team-hero-subtitle">Building premium coworking and managed office spaces across Delhi NCR.</p>
-              <div class="team-hero-stats">
-                <div class="team-hero-stat">
-                  <div class="team-hero-stat-icon"><i class="bi bi-buildings"></i></div>
-                  <div>
-                    <strong>153+</strong>
-                    <span>Companies Served</span>
-                  </div>
-                </div>
-                <div class="team-hero-stat-divider"></div>
-                <div class="team-hero-stat">
-                  <div class="team-hero-stat-icon"><i class="bi bi-geo-alt"></i></div>
-                  <div>
-                    <strong>14</strong>
-                    <span>Locations Across NCR</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-10 text-center city-hero-copy">
+            <h1 class="city-hero-title">Workspace Plans & Pricing</h1>
+            <p class="city-hero-subtitle">Flexible coworking and managed office plans for teams of every size.</p>
           </div>
-          
         </div>
       </div>
     </header>
 
-    <section class="team-philosophy-section">
+    <section class="section-space city-detail-section" id="city-locations">
       <div class="container">
-        <div class="row align-items-center g-4 g-xl-5">
+        <div class="row g-4 align-items-start city-listing-head">
           <div class="col-lg-6">
-            <div class="team-philosophy-copy">
-              <h2>Our Leadership Philosophy</h2>
-              <p>The Office Pass (TOP) is built by a team that understands the evolving needs of modern businesses. From startups and SMEs to enterprise teams, our leadership focuses on delivering thoughtfully designed workspaces, reliable operations and a seamless experience for every company that chooses TOP.</p>
-              <p class="mb-0">With years of experience in workspace operations, real estate and business services, our team ensures that every TOP experience reflects the values of professionalism, efficiency and hospitality.</p>
-            </div>
+            <h2 class="section-title text-danger">Offices Across Gurgaon</h2>
           </div>
           <div class="col-lg-6">
-            <article class="team-philosophy-card">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Aditya Verma and leadership team" />
-              <div class="team-philosophy-card-overlay"></div>
-              <div class="team-philosophy-card-body">
-                <h3>Aditya Verma</h3>
-                <h4>Founder &amp; CEO</h4>
-                <p>Driving strategy, vision and partnerships to build premium coworking spaces for Delhi NCR’s growing business community.</p>
-                <a href="#" class="team-philosophy-linkedin" aria-label="LinkedIn profile">
-                  <i class="bi bi-linkedin"></i>
-                </a>
+            <p class="section-copy mb-0 city-listing-copy">Strategically located offices across Cyber City, Golf Course Road, HUDA City Centre and key business hubs.</p>
+          </div>
+        </div>
+
+        <div class="city-office-directory" data-city-office-directory>
+          <div class="city-filter-row">
+            <div class="city-filter-box">
+              <label class="city-filter-label" for="cityFilter">City</label>
+              <select class="city-filter-select" id="cityFilter" aria-label="Select city"></select>
+            </div>
+            <div class="city-filter-divider"></div>
+            <div class="city-filter-box">
+              <label class="city-filter-label" for="workspaceFilter">Workspace</label>
+              <select class="city-filter-select" id="workspaceFilter" aria-label="Select workspace type">
+                <option value="All">All</option>
+                <option value="Coworking">Coworking</option>
+                <option value="Managed Office">Managed Office</option>
+                <option value="Private Office">Private Office</option>
+                <option value="Meeting Room">Meeting Room</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="city-chip-row" id="plans" data-city-chip-row></div>
+
+          <div class="city-location-title-wrap">
+            <h3 class="city-location-title" data-city-results-title>All Gurgaon Offices</h3>
+            <a href="#contact" class="city-location-link" aria-label="Open office location" data-city-results-link>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </div>
+
+          <div class="row g-4 city-office-grid" data-city-office-grid></div>
+          <div class="city-office-empty d-none" data-city-office-empty>No offices found for this filter selection.</div>
+          <div class="col-md-6 col-xl-4">
+            <article class="office-card featured-office-card p-3 city-office-list-card">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Unitech Cyber Park" />
+              <div class="office-card-body">
+                <h3>Unitech Cyber Park</h3>
+                <p class="mb-1">Price Starting</p>
+                <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
+                  <div class="price-tag">₹18,999 <span>/month</span></div>
+                  <a href="#" class="btn btn-outline-danger rounded-pill px-4">BOOK A VISIT</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="office-card featured-office-card p-3 city-office-list-card">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Unitech Cyber Park" />
+              <div class="office-card-body">
+                <h3>Unitech Cyber Park</h3>
+                <p class="mb-1">Price Starting</p>
+                <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
+                  <div class="price-tag">₹18,999 <span>/month</span></div>
+                  <a href="#" class="btn btn-outline-danger rounded-pill px-4">BOOK A VISIT</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="office-card featured-office-card p-3 city-office-list-card">
+              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80" alt="Unitech Cyber Park" />
+              <div class="office-card-body">
+                <h3>Unitech Cyber Park</h3>
+                <p class="mb-1">Price Starting</p>
+                <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
+                  <div class="price-tag">₹18,999 <span>/month</span></div>
+                  <a href="#" class="btn btn-outline-danger rounded-pill px-4">BOOK A VISIT</a>
+                </div>
               </div>
             </article>
           </div>
@@ -250,179 +285,65 @@
       </div>
     </section>
 
-    <section class="team-core-section">
-      <div class="container">
-
-         <div class="team-core-block">
-          <h2 class="team-core-heading">Leadership Team</h2>
-          <p class="team-core-paragraph">The passinate people behind our success, ensuring smooth operations and an exceptional community experience every day</p>
-          <div class="row g-4">
-            <div class="col-lg-4">
-              <article class="team-moment-card">
-                <div class="team-moment-media">
-                  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Friday jam sessions" />
-                  <a href="#" class="team-member-linkedin" aria-label="Aditya Verma LinkedIn"><i class="bi bi-linkedin"></i></a>
-                </div>
-                <div class="team-moment-body">
-                  <h3>Rajiv Arora</h3>
-                  <h4>Founder &amp; CEO</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <i class="bi bi-arrow-right"></i>
-                </div>
-              </article>
-            </div>
-            <div class="col-lg-4">
-              <article class="team-moment-card">
-                <div class="team-moment-media">
-                  <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Client walkthrough moments" />
-                  <a href="#" class="team-member-linkedin" aria-label="Aditya Verma LinkedIn"><i class="bi bi-linkedin"></i></a>
-                </div>
-                <div class="team-moment-body">
-                  <h3>Seema Ahuja</h3>
-                  <h4>Founder &amp; CEO</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                  <i class="bi bi-arrow-right"></i>
-                </div>
-              </article>
-            </div>
-            <div class="col-lg-4">
-              <article class="team-moment-card">
-                <div class="team-moment-media">
-                  <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80" alt="Team offsites" />
-                  <a href="#" class="team-member-linkedin" aria-label="Aditya Verma LinkedIn"><i class="bi bi-linkedin"></i></a>
-                </div>
-                <div class="team-moment-body">
-                  <h3>Shivam Sharma</h3>
-                  <h4>Founder &amp; CEO</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                  <i class="bi bi-arrow-right"></i>
-                </div>
-              </article>
-            </div>
-          </div>
+    <section class="features-section" id="why-top">
+      <div class="container position-relative">
+        <div class="text-center text-white section-head-light">
+          <h2 class="section-title text-white">Workspace Features</h2>
+          <p>Thoughtfully designed offices with modern amenities, ergonomic furniture, high-speed internet and secure access.</p>
         </div>
-
-        <div class="team-core-block">
-          <h2 class="team-core-heading">Our Core Team</h2>
-          <p class="team-core-paragraph">Meet the founders and leader driving The Office Pass forward</p>
-          <div class="row g-4">
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <article class="team-member-card">
-                <div class="team-member-media">
-                  <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80" alt="Aditya Verma" />
-                  <a href="#" class="team-member-linkedin" aria-label="Aditya Verma LinkedIn"><i class="bi bi-linkedin"></i></a>
-                </div>
-                <div class="team-member-body">
-                  <h3>Aditya Verma</h3>
-                  <h4>Founder &amp; CEO</h4>
-                  <p>Leading growth, partnerships and the long-term vision behind The Office Pass.</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <article class="team-member-card">
-                <div class="team-member-media">
-                  <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=80" alt="Priya Singh" />
-                  <a href="#" class="team-member-linkedin" aria-label="Priya Singh LinkedIn"><i class="bi bi-linkedin"></i></a>
-                </div>
-                <div class="team-member-body">
-                  <h3>Priya Singh</h3>
-                  <h4>Marketing Manager</h4>
-                  <p>Driving brand storytelling, campaigns and market visibility across channels.</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <article class="team-member-card">
-                <div class="team-member-media">
-                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="Ashish Gupta" />
-                  <a href="#" class="team-member-linkedin" aria-label="Ashish Gupta LinkedIn"><i class="bi bi-linkedin"></i></a>
-                </div>
-                <div class="team-member-body">
-                  <h3>Ashish Gupta</h3>
-                  <h4>Sales Manager</h4>
-                  <p>Helping teams find the right workspace mix with consultative sales support.</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <article class="team-member-card">
-                <div class="team-member-media">
-                  <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80" alt="Poja Arora" />
-                  <a href="#" class="team-member-linkedin" aria-label="Poja Arora LinkedIn"><i class="bi bi-linkedin"></i></a>
-                </div>
-                <div class="team-member-body">
-                  <h3>Poja Arora</h3>
-                  <h4>Co-Founder &amp; CTO</h4>
-                  <p>Building systems and operational workflows that make every workspace experience.</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <section class="team-life-section section-space pt-0">
-      <div class="container">
-        <div class="text-center team-life-head">
-          <h2>Life @ The Office Pass</h2>
-          <p>At The Office Pass, we believe great workplaces are built by great teams. From daily collaboration to festive celebrations, our work culture reflects the same energy and positivity we bring to our coworking spaces.</p>
-        </div>
-        <div class="life-carousel-wrap" data-life-carousel>
-          <button class="life-arrow life-arrow-prev" type="button" aria-label="Previous slide">
-            <i class="bi bi-chevron-left"></i>
-          </button>
-          <div class="life-carousel-viewport">
-            <div class="life-carousel-track">
-              <div class="life-slide life-slide-side">
-                <div class="life-card life-card-side">
-                  <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80" alt="Team celebrations" />
-                  <h3>Team Celebrations</h3>
-                  <p>Celebrating milestones, wins and shared moments that keep the team spirit alive.</p>
-                </div>
-              </div>
-              <div class="life-slide life-slide-center">
-                <div class="life-card life-card-main">
-                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Offsites" />
-                  <h3>Offsites</h3>
-                  <p>Creating space to connect, reflect and collaborate beyond the everyday work routine.</p>
-                </div>
-              </div>
-              <div class="life-slide life-slide-side">
-                <div class="life-card life-card-side">
-                  <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80" alt="Community events" />
-                  <h3>Community Events</h3>
-                  <p>Bringing people together through events that strengthen our culture and community.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="life-arrow life-arrow-next" type="button" aria-label="Next slide">
-            <i class="bi bi-chevron-right"></i>
-          </button>
+        <div class="row g-3 g-md-5">
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-buildings"></i><h3>Coworking Offices</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-person-workspace"></i><h3>Managed Offices</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-laptop"></i><h3>Private Offices</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-person-badge"></i><h3>CXO Cabins</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-camera-video"></i><h3>Meeting Rooms</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-house-door"></i><h3>Conference Rooms</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-train-front"></i><h3>Metro Connected</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-globe-central-south-asia"></i><h3>Beautiful Interiors</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-people"></i><h3>Female Friendly</h3></div></div>
+          <div class="col-6 col-md-4 col-xl-2-4"><div class="feature-box"><i class="bi bi-patch-check"></i><h3>Hassle-Free Operations</h3></div></div>
         </div>
       </div>
     </section>
 
-    <section class="team-work-cta section-space">
+    <section class="section-space city-section" id="locations">
       <div class="container">
-        <div class="team-work-cta-box">
-          <h2>Want To Work With Us?</h2>
-          <p>We are always looking for passionate professionals who want to help build inspiring workspaces and deliver remarkable experiences.</p>
-          <div class="team-work-cta-actions">
-            <a href="#contact" class="team-work-cta-btn">VIEW OPEN POSITIONS</a>
-            <a href="mailto:hello@theofficepass.com" class="team-work-cta-btn">E-MAIL YOUR INTEREST</a>
+        <div class="row align-items-start justify-content-between city-section-head mb-5">
+          <div class="col-lg-5"><h2 class="section-title text-danger">Choose Your City</h2></div>
+          <div class="col-lg-6">
+            <p class="section-copy mb-0">Explore premium coworking and managed offices in Gurgaon, Noida and Delhi, close to metro stations.</p>
+          </div>
+        </div>
+        <div class="row g-3 g-xl-4 gap-4 gap-md-0 city-grid">
+          <div class="col-md-6 col-xl-3">
+            <article class="city-card city-delhi">
+              <div class="city-card-badge">
+                <h3>Delhi - 1 Office</h3>
+                <a href="#"><span>View Office <i class="bi bi-chevron-right small"></i></span></a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-6">
+            <article class="city-card city-gurgaon">
+              <div class="city-card-badge">
+                <h3>Gurgaon - 11 Offices</h3>
+                <a href="#"><span>View Office <i class="bi bi-chevron-right small"></i></span></a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="city-card city-noida">
+              <div class="city-card-badge">
+                <h3>Noida - 1 Office</h3>
+                <a href="#"><span>View Office <i class="bi bi-chevron-right small"></i></span></a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-
-
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
       <div class="container">
         <div class="row footer-top">
           <div class="col-lg-3 mb-5 mb-md-0">

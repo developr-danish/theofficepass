@@ -205,10 +205,35 @@
         var lightbox = document.getElementById("galleryLightbox");
         var lightboxImage = lightbox ? lightbox.querySelector(".gallery-lightbox-image") : null;
         var closeButton = lightbox ? lightbox.querySelector(".gallery-lightbox-close") : null;
+        var prevButton = lightbox ? lightbox.querySelector(".gallery-lightbox-prev") : null;
+        var nextButton = lightbox ? lightbox.querySelector(".gallery-lightbox-next") : null;
+        var countLabel = document.getElementById("galleryLightboxCount");
+        var titleLabel = document.getElementById("galleryLightboxTitle");
         var tiles = Array.from(document.querySelectorAll(".gallery-grid .gallery-tile"));
+        var activeImages = [];
+        var activeIndex = 0;
 
-        if (!lightbox || !lightboxImage || !closeButton || !tiles.length) {
+        if (!lightbox || !lightboxImage || !closeButton || !prevButton || !nextButton || !countLabel || !titleLabel || !tiles.length) {
           return;
+        }
+
+        function updateLightboxImage() {
+          if (!activeImages.length) {
+            return;
+          }
+
+          lightboxImage.src = activeImages[activeIndex];
+          lightboxImage.alt = activeImages[activeIndex] || "";
+          countLabel.textContent = (activeIndex + 1) + " / " + activeImages.length;
+        }
+
+        function goToSlide(nextIndex) {
+          if (!activeImages.length) {
+            return;
+          }
+
+          activeIndex = (nextIndex + activeImages.length) % activeImages.length;
+          updateLightboxImage();
         }
 
         function closeLightbox() {
@@ -220,13 +245,19 @@
         tiles.forEach(function (tile) {
           tile.addEventListener("click", function () {
             var image = tile.querySelector("img");
+            var images = (tile.dataset.images || "")
+              .split(",")
+              .map(function (item) { return item.trim(); })
+              .filter(Boolean);
 
-            if (!image) {
+            if (!image || !images.length) {
               return;
             }
 
-            lightboxImage.src = image.currentSrc || image.src;
-            lightboxImage.alt = image.alt || "";
+            activeImages = images;
+            activeIndex = 0;
+            titleLabel.textContent = image.alt || "Workspace preview";
+            updateLightboxImage();
             lightbox.classList.add("is-open");
             lightbox.setAttribute("aria-hidden", "false");
             document.body.classList.add("lightbox-open");
@@ -234,6 +265,14 @@
         });
 
         closeButton.addEventListener("click", closeLightbox);
+        prevButton.addEventListener("click", function (event) {
+          event.stopPropagation();
+          goToSlide(activeIndex - 1);
+        });
+        nextButton.addEventListener("click", function (event) {
+          event.stopPropagation();
+          goToSlide(activeIndex + 1);
+        });
 
         lightbox.addEventListener("click", function (event) {
           if (event.target === lightbox) {
@@ -242,6 +281,14 @@
         });
 
         document.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowLeft" && lightbox.classList.contains("is-open")) {
+            goToSlide(activeIndex - 1);
+          }
+
+          if (event.key === "ArrowRight" && lightbox.classList.contains("is-open")) {
+            goToSlide(activeIndex + 1);
+          }
+
           if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
             closeLightbox();
           }
@@ -606,17 +653,32 @@
       if (scmForm) {
         const stepOne = scmForm.querySelector(".scm-form-step-one");
         const stepTwo = scmForm.querySelector(".scm-form-step-two");
+        const stepThree = scmForm.querySelector(".scm-form-step-three");
+        const stepOneForm = scmForm.querySelector("[data-scm-step-one-form]");
+        const stepTwoForm = scmForm.querySelector("[data-scm-step-two-form]");
         const nextButton = scmForm.querySelector("[data-scm-next]");
+        const nextMiddleButton = scmForm.querySelector("[data-scm-next-middle]");
         const skipButton = scmForm.querySelector("[data-scm-skip]");
         const choiceButtons = scmForm.querySelectorAll(".scm-choice-chip");
 
         const showStep = (step) => {
-          const showFirst = step === 1;
-          stepOne.classList.toggle("is-active", showFirst);
-          stepTwo.classList.toggle("is-active", !showFirst);
+          stepOne?.classList.toggle("is-active", step === 1);
+          stepTwo?.classList.toggle("is-active", step === 2);
+          stepThree?.classList.toggle("is-active", step === 3);
         };
 
+        stepOneForm?.addEventListener("submit", (event) => {
+          event.preventDefault();
+          showStep(2);
+        });
+
+        stepTwoForm?.addEventListener("submit", (event) => {
+          event.preventDefault();
+          showStep(3);
+        });
+
         nextButton?.addEventListener("click", () => showStep(2));
+        nextMiddleButton?.addEventListener("click", () => showStep(3));
         skipButton?.addEventListener("click", () => showStep(1));
 
         choiceButtons.forEach((button) => {
@@ -627,10 +689,96 @@
           });
         });
 
-        stepTwo?.querySelector(".scm-details-form")?.addEventListener("submit", (event) => {
+        stepThree?.querySelector(".scm-details-form")?.addEventListener("submit", (event) => {
           event.preventDefault();
           showStep(1);
         });
       }
 
       // scm form js
+
+      // career testimonial read more js
+
+      document.querySelectorAll(".career-testimonial-copy p").forEach((paragraph) => {
+        if (paragraph.dataset.readmoreBound === "true") return;
+        paragraph.dataset.readmoreBound = "true";
+
+        const toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "career-testimonial-toggle";
+        toggle.textContent = "Read More";
+
+        toggle.addEventListener("click", () => {
+          const expanded = paragraph.classList.toggle("is-expanded");
+          toggle.textContent = expanded ? "Read Less" : "Read More";
+        });
+
+        paragraph.insertAdjacentElement("afterend", toggle);
+      });
+
+      // career testimonial read more js
+
+      // location landmark card selection js
+
+      document.querySelectorAll(".location-landmark-grid").forEach((grid) => {
+        grid.addEventListener("click", (event) => {
+          const card = event.target.closest(".location-landmark-card");
+          if (!card || !grid.contains(card)) return;
+
+          grid.querySelectorAll(".location-landmark-card").forEach((item) => {
+            item.classList.remove("selected");
+          });
+
+          card.classList.add("selected");
+        });
+      });
+
+      // location landmark card selection js
+
+      // photo video gallery lightbox js
+
+      (function () {
+        var lightbox = document.getElementById("videoGalleryLightbox");
+        var frame = lightbox ? lightbox.querySelector("iframe") : null;
+        var closeButton = lightbox ? lightbox.querySelector(".video-gallery-close") : null;
+        var cards = Array.from(document.querySelectorAll(".video-gallery-card"));
+
+        if (!lightbox || !frame || !closeButton || !cards.length) {
+          return;
+        }
+
+        function closeVideoLightbox() {
+          lightbox.classList.remove("is-open");
+          lightbox.setAttribute("aria-hidden", "true");
+          frame.src = "";
+          document.body.classList.remove("lightbox-open");
+        }
+
+        cards.forEach(function (card) {
+          card.addEventListener("click", function () {
+            var videoUrl = card.dataset.video;
+            if (!videoUrl) return;
+
+            frame.src = videoUrl;
+            lightbox.classList.add("is-open");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lightbox-open");
+          });
+        });
+
+        closeButton.addEventListener("click", closeVideoLightbox);
+
+        lightbox.addEventListener("click", function (event) {
+          if (event.target === lightbox) {
+            closeVideoLightbox();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeVideoLightbox();
+          }
+        });
+      })();
+
+      // photo video gallery lightbox js
